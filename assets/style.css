@@ -1,3 +1,39 @@
 *{
   margin: 0px;
+  background-color: rgb(156, 255, 255);
+}
+
+
+#logo {
+  margin: auto;
+  margin-left: 5px;
+  height: 75px;
+  width: 62px;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+
+#title {
+  left: 0px;
+  margin: auto;
+  margin-top: 12px;
+  margin-left: 0px;
+  padding: 10px;
+  padding-left: 0px;
+}
+
+
+#banner {
+  text-align: center;
+}
+
+
+#firstGroup {
+
+}
+
+
+#secondGroup {
+  align-content: right;
 }

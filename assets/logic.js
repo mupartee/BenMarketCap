@@ -12,9 +12,8 @@ $(document).ready(function() {
         let name = data[0].name;
         console.log(name);
         return name;
-        $("#name").text(name);
+        $("#name").text(data[0].name);
       })
     })
-
 
 });

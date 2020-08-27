@@ -7,7 +7,7 @@ $(document).ready(function() {
   let marketCapData = BASE_URL + MARKET_CAP_DATA;
 
 // loop for "index"
-  for (var index = 0; index <= 99; index++) {
+  for (var index = 0; index <= 9; index++) {
       // console.log(index);
       getMarketCapRank(index);
   }
@@ -27,7 +27,24 @@ $(document).ready(function() {
   }
 
 
-  for (var index = 0; index <= 99; index++) {
+  for (var index = 0; index <= 9; index++) {
+      getMarketCapImage(index);
+  }
+
+  function getMarketCapImage(image) {
+    var list = $(".coin");
+    fetch(marketCapData)
+      .then( res => {
+        res.json().then( data => {
+          let picCoin = new Image();   // Create new img element
+          picCoin.src = data[image].image; // Set source path
+          $("<p/>").text(picCoin).appendTo(list);
+        })
+      })
+  }
+
+
+  for (var index = 0; index <= 9; index++) {
       getMarketCapName(index);
   }
 
@@ -37,7 +54,6 @@ $(document).ready(function() {
       .then( res => {
         res.json().then( data => {
           let nameCoin = data[name].name;
-          // console.log(nameCoin);
           $("<p/>").text(nameCoin).appendTo(list);
           return nameCoin;
         })
@@ -45,7 +61,7 @@ $(document).ready(function() {
   }
 
 
-  for (var index = 0; index <= 99; index++) {
+  for (var index = 0; index <= 9; index++) {
       getMarketCap(index);
   }
 
@@ -55,15 +71,16 @@ $(document).ready(function() {
       .then( res => {
         res.json().then( data => {
           let marketCapCoin = data[marketCap].market_cap;
+          let marketCapString = Number(marketCapCoin).toLocaleString();
           // console.log(marketCapCoin);
-          $("<p/>").text(marketCapCoin).appendTo(list);
+          $("<p/>").text("$" + marketCapString).appendTo(list);
           return marketCapCoin;
         })
       })
   }
 
 
-  for (var index = 0; index <= 99; index++) {
+  for (var index = 0; index <= 9; index++) {
       getMarketCapPrice(index);
   }
 
@@ -73,15 +90,16 @@ $(document).ready(function() {
       .then( res => {
         res.json().then( data => {
           let priceCoin = data[price].current_price;
+          let priceString = Number(priceCoin).toLocaleString();
           // console.log(priceCoin);
-          $("<p/>").text(priceCoin).appendTo(list);
+          $("<p/>").text("$" + priceString).appendTo(list);
           return priceCoin;
         })
       })
   }
 
 
-  for (var index = 0; index <= 99; index++) {
+  for (var index = 0; index <= 9; index++) {
       getMarketCapVolume(index);
   }
 
@@ -91,15 +109,16 @@ $(document).ready(function() {
       .then( res => {
         res.json().then( data => {
           let volumeCoin = data[volume].total_volume;
+          let volumeString = Number(volumeCoin).toLocaleString();
           // console.log(volumeCoin);
-          $("<p/>").text(volumeCoin).appendTo(list);
+          $("<p/>").text(volumeString).appendTo(list);
           return volumeCoin;
         })
       })
   }
 
 
-  for (var index = 0; index <= 99; index++) {
+  for (var index = 0; index <= 9; index++) {
       getMarketCapSupply(index);
   }
 
@@ -117,15 +136,16 @@ $(document).ready(function() {
           }
 
           let supplyInMillions = inMillions(circulatingSupplyCoin);
+          let supplyString = Number(supplyInMillions).toLocaleString();
 
-          $("<p/>").text(supplyInMillions + " million").appendTo(list);
+          $("<p/>").text(supplyString + " million").appendTo(list);
           return circulatingSupplyCoin;
         })
       })
   }
 
 
-  for (var index = 0; index <= 99; index++) {
+  for (var index = 0; index <= 9; index++) {
       getMarketCapPriceChange(index);
   }
 
@@ -144,11 +164,9 @@ $(document).ready(function() {
           let changeFixToTwo = changeFix(changeCoin);
 
           if (changeCoin >= 0) {
-            $("<p/>").text("+" + changeFixToTwo + "%").appendTo(list);
-            $("<p/>").css("color","green")
+            $("<p/>").text("+" + changeFixToTwo + "%").css("color","green").appendTo(list);
           } else {
-            $("<p/>").text(changeFixToTwo + "%").appendTo(list);
-            $("<p/>").css("color","red")
+            $("<p/>").text(changeFixToTwo + "%").css("color","red").appendTo(list);
           }
 
           return changeCoin;

@@ -36,12 +36,41 @@ $(document).ready(function() {
     fetch(marketCapData)
       .then( res => {
         res.json().then( data => {
-          let picCoin = new Image();   // Create new img element
-          picCoin.src = data[image].image; // Set source path
-          $("<p/>").text(picCoin).appendTo(list);
+          let coinPic = data[image].image;
+          $("<p/>").html(coinPic).appendTo(list).val();
         })
       })
   }
+
+/*
+  function createCoinTable(coinData) {
+    console.log('creating coin table');
+    // clear out any old elements
+    $('tr.content-row').remove();
+    const coinTable = $('#coinTable');
+
+    // create a table row for each coin in the list
+    for (let key in coinData) {
+        let coin = coinData[key];
+        // console.log(creating table row for: ${coin.name});
+        coinTable.append(
+            $('<tr class="content-row"></tr>').append(
+                $('<td class="text-left"></td>').text(coin.market_cap_rank),
+                $('<td class="text-left"></td>').append(
+                    $('<div></div>').append(
+                        <img src="${coin.image}" width="16" height="16"> ${coin.name}
+                    )),
+                $('<td ></td>').text(fmt.c0.format(coin.market_cap)),
+                $('<td></td>').text(fmt.c.format(coin.current_price)),
+                $('<td></td>').text(fmt.c0.format(coin.total_volume)),
+                $('<td></td>').text(fmt.n0.format(coin.circulating_supply)),
+                $(<td class="${coin.price_change_percentage_24h > 0 ? 'positive-change' : 'negative-change'}"></td>).text(fmt.p2.format(coin.price_change_percentage_24h / 100)),
+                $('<td></td>').text(''), // price graph?
+            )
+        );
+    }
+}
+*/
 
 
   for (var index = 0; index <= 9; index++) {

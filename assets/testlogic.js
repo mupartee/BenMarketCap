@@ -37,9 +37,9 @@ $(document).ready(function() {
       .then( res => {
         res.json().then( data => {
           let coinPic = data[image].image;
-          $("<div></div>").appendTo(list).append(
-            `<img src=${coinPic}" width="25" height="25">`);
-          return coinPic;
+          $('<p/>').appendTo(list).append(
+            `<img src=${coinPic}" width="16" height="16">`);
+          return coinPic;  
         })
       })
   }

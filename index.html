@@ -19,13 +19,13 @@
 
       <div class="row">
 
-        <div class="col-md-1 col-sm-1 col-1">
+        <div class="col-md-1 col-sm-2 col-2">
           <div class="float-left top-row">
             <img src="assets/BenMarketCapLogo.jpg" alt="Ben Market Cap logo" id="logo" />
           </div>
         </div>
 
-        <div class="col-md-11 col-sm-11 col-11">
+        <div class="col-md-11 col-sm-10 col-10">
           <div class="float-left top-row" id="title">
             <h6>Ben's Market Cap</h6>
           </div>
@@ -45,8 +45,8 @@
 
 
     <div class="row">
-
-      <ul class="nav nav-tabs">
+      <div class="col-md-12 col-sm-12 col-12">
+        <ul class="nav nav-tabs">
             <li class="nav-item">
               <a class="nav-link app-tab-link active" id="link-tab-crypto">Cryptocurrencies</a>
             </li>
@@ -68,96 +68,115 @@
 
             </li>
           </ul>
-
-<!--
-      <div class="col-md-12 col-sm-12 col-12">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <a class="nav-link active" id="crypto-tab" data-toggle="tab" href="#crypto" role="tab" aria-controls="crypto" aria-selected="true">Crypto</a>
-          </li>
-          <li class="nav-item" role="presentation">
-            <a class="nav-link" id="exchanges-tab" data-toggle="tab" href="#exchanges" role="tab" aria-controls="exchanges" aria-selected="false">Exchanges</a>
-          </li>
-          <li class="nav-item" role="presentation">
-            <a class="nav-link" id="nextTen-tab" data-toggle="tab" href="#nextTen" role="tab" aria-controls="nextTen" aria-selected="false">Next 10</a>
-          </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade show active" id="crypto" role="tabpanel" aria-labelledby="crypto-tab"></div>
--->
-          <div class="container-fluid">
+        </div>
+      </div>
 
             <div class="row">
-
-              <div class="col-md-1 col-sm-1 col-1">
-                <div class="float-left top-row">
-                  <p><strong>Rank</strong></p>
-                  <p class="rank">1</p>
-                  <p class="rank">2</p>
-                  <p class="rank">3</p>
-                  <p class="rank">4</p>
-                  <p class="rank">5</p>
-                  <p class="rank">6</p>
-                  <p class="rank">7</p>
-                  <p class="rank">8</p>
-                  <p class="rank">9</p>
-                  <p class="rank">10</p>
-                </div>
+              <div class="col-md-12 col-sm-12 col-12">
+                <table style="width:100%">
+                  <tr>
+                    <th>Rank</th>
+                    <th style="width:40px">Coin</th>
+                    <th>Name</th>
+                    <th>Market Cap</th>
+                    <th>Price</th>
+                    <th>Volume</th>
+                    <th>Circulating Supply</th>
+                    <th>Change</th>
+                  </tr>
+                  <tr>
+                    <td class="rank" align="center"></td>
+                    <td class="coin" align="center"></td>
+                    <td class="name"></td>
+                    <td class="marketCap"></td>
+                    <td class="price"></td>
+                    <td class="volume"></td>
+                    <td class="circulatingSupply"></td>
+                    <td class="change"></td>
+                  </tr>
+                </table>
               </div>
+            </div>
 
-              <div class="col-md-2 col-sm-2 col-2">
-                <div class="float-left top-row">
-                  <p><strong>Name</strong></p>
-                  <p id="name"></p>
+
+<!--
+            <div class="container-fluid">
+
+              <div class="row">
+
+                <div class="col-md-1 col-sm-1 col-1">
+                  <div class="float-right top-row">
+                    <p><strong>Rank</strong></p>
+                    <p class="rank"></p>
+                  </div>
                 </div>
-              </div>
 
-              <div class="col-md-2 col-sm-2 col-2">
-                <div class="float-left top-row" id="MarketCap">
-                  <p><strong>MarketCap</strong></p>
+                <div class="col-md-1 col-sm-1 col-1">
+                  <div class="float-right top-row">
+                    <p><strong>Coin</strong></p>
+                    <p class="coin"></p>
+                  </div>
                 </div>
-              </div>
 
-              <div class="col-md-1 col-sm-1 col-1">
-                <div class="float-left top-row" id="price">
-                  <p><strong>Price</strong></p>
+                <div class="col-md-1 col-sm-1 col-1">
+                  <div class="float-left top-row">
+                    <p><strong>Name</strong></p>
+                    <p class="name"></p>
+                  </div>
                 </div>
-              </div>
 
-              <div class="col-md-1 col-sm-1 col-1">
-                <div class="float-left top-row" id="volume">
-                  <p><strong>Volume</strong></p>
+                <div class="col-md-2 col-sm-2 col-2">
+                  <div class="float-left top-row">
+                    <p><strong>MarketCap</strong></p>
+                    <p class="marketCap"></p>
+                  </div>
                 </div>
-              </div>
 
-              <div class="col-md-2 col-sm-2 col-2">
-                <div class="float-left top-row" id="CirculatingSupply">
-                  <p><strong>Circulating Supply</strong></p>
+                <div class="col-md-1 col-sm-1 col-1">
+                  <div class="float-left top-row">
+                    <p><strong>Price</strong></p>
+                    <p class="price"></p>
+                  </div>
                 </div>
-              </div>
 
-              <div class="col-md-1 col-sm-1 col-1">
-                <div class="float-left top-row" id="change">
-                  <p><strong>Change</strong></p>
+                <div class="col-md-1 col-sm-1 col-1">
+                  <div class="float-left top-row">
+                    <p><strong>Volume</strong></p>
+                    <p class="volume"></p>
+                  </div>
                 </div>
-              </div>
 
-              <div class="col-md-2 col-sm-2 col-2">
-                <div class="float-left top-row" id="priceGraph">
-                  <p><strong>Price Graph (7d)</strong></p>
+                <div class="col-md-2 col-sm-2 col-2">
+                  <div class="float-left top-row">
+                    <p><strong>Circ. Supply</strong></p>
+                    <p class="circulatingSupply"></p>
+                  </div>
                 </div>
-              </div>
 
-          <div class="tab-pane fade" id="exchanges" role="tabpanel" aria-labelledby="exchanges-tab">Put exchange info here</div>
-          <div class="tab-pane fade" id="nextTen" role="tabpanel" aria-labelledby="nextTen-tab">Put next ten cryptos here</div>
+                <div class="col-md-1 col-sm-1 col-1">
+                  <div class="float-left top-row">
+                    <p><strong>Change</strong></p>
+                    <p class="change"></p>
+                  </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-2">
+                  <div class="float-left top-row">
+                    <p><strong>Price Graph (7d)</strong></p>
+                    <p class="priceGraph"></p>
+                  </div>
+                </div>
+
+              <div class="tab-pane fade" id="exchanges" role="tabpanel" aria-labelledby="exchanges-tab">Put exchange info here</div>
+            <div class="tab-pane fade" id="nextTen" role="tabpanel" aria-labelledby="nextTen-tab">Put next ten cryptos here</div>
+          </div>
+
         </div>
-
 
       </div>
 
     </div>
-
-  </div>
+  -->
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

@@ -7,7 +7,7 @@ $(document).ready(function() {
   let marketCapData = BASE_URL + MARKET_CAP_DATA;
 
 // loop for "index"
-  for (var index = 0; index <= 9; index++) {
+  for (var index = 0; index <= 99; index++) {
       // console.log(index);
       getMarketCapRank(index);
   }
@@ -27,7 +27,7 @@ $(document).ready(function() {
   }
 
 
-  for (var index = 0; index <= 9; index++) {
+  for (var index = 0; index <= 99; index++) {
       getMarketCapImage(index);
   }
 
@@ -39,12 +39,12 @@ $(document).ready(function() {
           let coinPic = data[image].image;
           $('<p/>').appendTo(list).append(
             `<img src=${coinPic}" width="16" height="16">`);
-          return coinPic;  
+          return coinPic;
         })
       })
   }
 
-  for (var index = 0; index <= 9; index++) {
+  for (var index = 0; index <= 99; index++) {
       getMarketCapName(index);
   }
 
@@ -61,7 +61,7 @@ $(document).ready(function() {
   }
 
 
-  for (var index = 0; index <= 9; index++) {
+  for (var index = 0; index <= 99; index++) {
       getMarketCap(index);
   }
 
@@ -80,7 +80,7 @@ $(document).ready(function() {
   }
 
 
-  for (var index = 0; index <= 9; index++) {
+  for (var index = 0; index <= 99; index++) {
       getMarketCapPrice(index);
   }
 
@@ -99,7 +99,7 @@ $(document).ready(function() {
   }
 
 
-  for (var index = 0; index <= 9; index++) {
+  for (var index = 0; index <= 99; index++) {
       getMarketCapVolume(index);
   }
 
@@ -118,7 +118,7 @@ $(document).ready(function() {
   }
 
 
-  for (var index = 0; index <= 9; index++) {
+  for (var index = 0; index <= 99; index++) {
       getMarketCapSupply(index);
   }
 
@@ -138,14 +138,14 @@ $(document).ready(function() {
           let supplyInMillions = inMillions(circulatingSupplyCoin);
           let supplyString = Number(supplyInMillions).toLocaleString();
 
-          $("<p/>").text(supplyString + " million").appendTo(list);
+          $("<p/>").text(supplyString + " mil.").appendTo(list);
           return circulatingSupplyCoin;
         })
       })
   }
 
 
-  for (var index = 0; index <= 9; index++) {
+  for (var index = 0; index <= 99; index++) {
       getMarketCapPriceChange(index);
   }
 
@@ -173,31 +173,5 @@ $(document).ready(function() {
         })
       })
   }
-
-/*
-   fetch(marketCapData)
-      .then( res => {
-        res.json().then( data => {
-          let changeCoin = data[4].price_change_percentage_24h;
-          console.log(changeCoin);
-
-          function changeFix(num) {
-            return (num).toFixed(2);
-          }
-
-          let changeFixToTwo = changeFix(changeCoin);
-
-          if (changeCoin >= 0) {
-            $(".change").html("+" + changeFixToTwo + "%");
-            $(".change").css("color","green")
-          } else {
-            $(".change").html(changeFixToTwo + "%");
-            $(".change").css("color","red")
-          }
-
-          return changeCoin;
-        })
-      })
-*/
 
 });

@@ -27,11 +27,26 @@
 }
 
 
-#firstGroup {
-
-}
-
-
 #secondGroup {
   align-content: right;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+table {
+  margin: 50px;
+}
+
+th, td {
+  margin-left: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.coin {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
 }
